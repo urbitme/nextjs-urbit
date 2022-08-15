@@ -6,9 +6,7 @@ import useClickAway from 'components/util/useClickAway'
 import DarkModeToggle from 'components/widgets/DarkModeToggle'
 
 const links = [
-  { href: "/one", title: "One" },
-  { href: "/two", title: "Two" },
-  { href: "/three", title: "Three" },
+  { href: "/about", title: "About" },
 ]
 
 const Header = ({dark}) => {
