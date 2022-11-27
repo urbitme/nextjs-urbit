@@ -56,6 +56,8 @@ Your project will be exported to `out/` in your project directory.  This is the 
 
 To add this bundle to your Urbit app, visit `http://localhost:8080/docket/upload`.  Select the desk for your app, and choose your apps `out/` directory for upload.
 
+**Note**: This project only works with `glob-ames` and the globulator, the file names produced by Next.js are not compatible with clay and `glob-http`.
+
 ## Learn More
 
 To learn app development on Urbit, follow the guides here:
