@@ -23,7 +23,7 @@ Open [http://localhost:3000/apps/myappname](http://localhost:3000/apps/myappname
 
 1. Setup and run a local fake Urbit ship containing your app, see the resources below for Urbit development guides.
 1. Allow cross-origin requests on your ship.  This project loads at `localhost:3000` by default so run the following in your urbit dojo:
-    ```
+    ```hoon
     |cors-approve 'http://localhost:3000'
     ```
 1. Set the environment variables for your local ship in `.env.development.local`.  Copy the example file from this project, or use the following example below.  Adjust the values to match your local setup.
@@ -33,7 +33,7 @@ Open [http://localhost:3000/apps/myappname](http://localhost:3000/apps/myappname
     NEXT_PUBLIC_URBIT_SHIP_CODE=lidlut-tabwed-pillex-ridrup
     ```
 1. Edit the `basePath` property in `next.config.js` to match your app name:
-    ```
+    ```js
     module.exports = {
       basePath: '/apps/myappname'
     }
@@ -50,13 +50,32 @@ npm run build
 yarn build
 ```
 
-This is a client side only app, so we cannot use the server side features of Next.js, and we use `next export` in our build process.  This document explains what features can and cannot be used with this approach: [Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export)
+This is a client side only app, so we cannot use the server side features of Next.js, and we use `next export` in our build process.  The following document explains what features can and cannot be used with this approach:
+
+* [Next.js - Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export)
 
 Your project will be exported to `out/` in your project directory.  This is the client side bundle you will include in your app.
 
+### Using glob-ames
+
 To add this bundle to your Urbit app, visit `http://localhost:8080/docket/upload`.  Select the desk for your app, and choose your apps `out/` directory for upload.
 
-**Note**: This project only works with `glob-ames` and the globulator, the file names produced by Next.js are not compatible with clay and `glob-http`.
+### Using glob-http
+
+Some modifications are required since clay does not accept file names containing capital letters:
+
+1. Add the `generateBuildId` property to `next.config.js`:
+    ```js
+    module.exports = {
+      basePath: '/apps/myappname',
+      generateBuildId: async () => {
+        // This value must be a valid urbit knot
+        return 'unique-build-id'
+      },
+    }
+    ```
+1. After building, rename any files in `out/` so they do not contain capital letters, and update all links in the HTML referring to these files.
+1. Proceed to glob using the `out/` directory, following the instructions at: [Urbit Developers - Glob](https://developers.urbit.org/reference/additional/dist/glob)
 
 ## Learn More
 
