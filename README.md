@@ -32,9 +32,9 @@ Open [http://localhost:3000/apps/myappname](http://localhost:3000/apps/myappname
     NEXT_PUBLIC_URBIT_SHIP_URL=localhost:8080
     NEXT_PUBLIC_URBIT_SHIP_CODE=lidlut-tabwed-pillex-ridrup
     ```
-1. Edit the `basePath` property in `next.config.js` to match your app name:
+1. Edit the `basePath` property in `next.config.mjs` to match your app name:
     ```js
-    module.exports = {
+    export default {
       basePath: '/apps/myappname'
     }
     ```
@@ -56,26 +56,7 @@ This is a client side only app, so we cannot use the server side features of Nex
 
 Your project will be exported to `out/` in your project directory.  This is the client side bundle you will include in your app.
 
-### Using glob-ames
-
-To add this bundle to your Urbit app, visit `http://localhost:8080/docket/upload`.  Select the desk for your app, and choose your apps `out/` directory for upload.
-
-### Using glob-http
-
-Some modifications are required since clay does not accept file names containing capital letters:
-
-1. Add the `generateBuildId` property to `next.config.js`:
-    ```js
-    module.exports = {
-      basePath: '/apps/myappname',
-      generateBuildId: async () => {
-        // This value must be a valid urbit knot
-        return 'unique-build-id'
-      },
-    }
-    ```
-1. After building, rename any files in `out/` so they do not contain capital letters, and update all links in the HTML referring to these files.
-1. Proceed to glob using the `out/` directory, following the instructions at: [Urbit Developers - Glob](https://developers.urbit.org/reference/additional/dist/glob)
+Glob the `out/` directory following the instructions at: [Urbit Developers - Glob](https://developers.urbit.org/reference/additional/dist/glob)
 
 ## Learn More
 
