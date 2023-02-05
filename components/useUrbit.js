@@ -72,7 +72,7 @@ export function useUrbit() {
 
   useEffect(() => {
     getUrbitApi()
-  }, [])
+  }, [getUrbitApi])
 
   return urbit
 }

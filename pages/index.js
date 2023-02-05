@@ -19,7 +19,7 @@ export default function Index() {
     if (urbit) {
       doPoke()
     }
-  }, [urbit])
+  }, [urbit, doPoke])
 
   return (
     <Layout className="bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-white transition-colors duration-200">

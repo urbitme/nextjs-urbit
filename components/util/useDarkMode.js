@@ -26,7 +26,7 @@ export const DarkModeProvider = (props) => {
 
   const toggleDarkMode = useCallback(() => {
     setIsDark(!isDark)
-  }, [isDark, setIsDark])
+  }, [isDark])
 
   return <DarkModeContext.Provider value={[isDark, toggleDarkMode]} {...props} />
 }
