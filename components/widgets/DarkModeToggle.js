@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Switch } from "@headlessui/react"
-import { MoonIcon } from '@heroicons/react/solid'
+import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
 import { useDarkMode } from 'components/util/useDarkDefaultMode'
 
 const DarkModeToggle = () => {
@@ -11,7 +11,7 @@ const DarkModeToggle = () => {
   return (
     <Switch.Group as="div" className="flex items-center space-x-1">
       <Switch.Label className="transition duration-75">
-        <MoonIcon className="h-6 w-6"/>
+        <SunIcon className="h-6 w-6"/>
       </Switch.Label>
       <Switch
         as="button"
@@ -24,6 +24,9 @@ const DarkModeToggle = () => {
           />
         )}
       </Switch>
+      <Switch.Label className="transition duration-75">
+        <MoonIcon className="h-6 w-6"/>
+      </Switch.Label>
     </Switch.Group>
   )
 }
