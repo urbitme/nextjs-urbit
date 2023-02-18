@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from 'react'
 import Layout, { Row, Main, Container } from 'components/layouts/WideStretched'
 import Header from 'components/headers/Underline'
+import Footer from 'components/footers/SocialOnly'
 import { useUrbit } from 'components/useUrbit'
 
 export default function Index() {
@@ -39,7 +40,7 @@ export default function Index() {
       </Main>
       <Row className="border-t border-gray-300 bg-gray-200 text-gray-600">
         <Container>
-          Footer
+          <Footer />
         </Container>
       </Row>
     </Layout>
