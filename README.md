@@ -32,11 +32,9 @@ Open [http://localhost:3000/apps/myappname](http://localhost:3000/apps/myappname
     NEXT_PUBLIC_URBIT_SHIP_URL=localhost:8080
     NEXT_PUBLIC_URBIT_SHIP_CODE=lidlut-tabwed-pillex-ridrup
     ```
-1. Edit the `basePath` property in `next.config.mjs` to match your app name:
+1. Edit `basePath` in `next.config.mjs` to match your app name:
     ```js
-    export default {
-      basePath: '/apps/myappname'
-    }
+    const basePath = '/apps/myappname'
     ```
     You will need to visit `localhost:3000/apps/myappname` to view your app during development.
 
@@ -50,11 +48,11 @@ npm run build
 yarn build
 ```
 
-This is a client side only app, so we cannot use the server side features of Next.js, and we use `next export` in our build process.  The following document explains what features can and cannot be used with this approach:
+This is a client side only app, so the server side features of Next.js are not supported, and `next export` is used in the build process.  This document explains what features are supported with this approach:
 
 * [Next.js - Static HTML Export](https://nextjs.org/docs/advanced-features/static-html-export)
 
-Your project will be exported to `out/` in your project directory.  This is the client side bundle you will include in your app.
+Your project will be exported to `out/` in the project directory.  This is the client side bundle you will include in your app.
 
 Glob the `out/` directory following the instructions at: [Urbit Developers - Glob](https://developers.urbit.org/reference/additional/dist/glob)
 

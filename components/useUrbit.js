@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import Urbit from '@urbit/http-api'
 
-// We attempt to load /session.js on page load in /pages/_app.js
+// We attempt to load /session.js on page load in /pages/_document.js
 // If window.ship is present, we assume session.js was loaded and
 // we are authenticated
 function isAuthenticated() {
