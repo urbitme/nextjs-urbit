@@ -1,5 +1,5 @@
 import { UrbitSessionScript } from 'components/useUrbit'
-import { DarkModeProvider } from 'components/util/useDarkDefaultMode'
+import { DarkModeProvider } from 'components/util/useDarkMode'
 import 'styles/index.css'
 
 function MyApp({ Component, pageProps }) {
