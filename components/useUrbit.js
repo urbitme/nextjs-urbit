@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback } from 'react'
-import Script from 'next/script'
 import Urbit from '@urbit/http-api'
 
 // We attempt to load /session.js on page load in /pages/_app.js
@@ -77,10 +76,10 @@ export function useUrbit() {
   return urbit
 }
 
-export function UrbitSessionScript() {
+export function urbitSessionScriptUrl() {
   if (process.env.NEXT_PUBLIC_URBIT_SHIP_URL == undefined) {
-    return <Script src="/session.js" strategy='beforeInteractive'/>
+    return "/session.js"
   } else {
-    return <Script src={`http://${process.env.NEXT_PUBLIC_URBIT_SHIP_URL}/session.js`} strategy='beforeInteractive'/>
+    return `http://${process.env.NEXT_PUBLIC_URBIT_SHIP_URL}/session.js`
   }
 }
