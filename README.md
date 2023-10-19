@@ -69,4 +69,4 @@ To learn more about Next.js, take a look at the following resources:
 
 ## Support
 
-You are welcome to bring questions and comments to the [urbit.me Discord](https://discord.gg/ehRV6yj) or to `~nodreb-borrus` on Urbit.  Thank you for supporting [urbit.me](https://urbit.me).
+You are welcome to bring questions and comments to `~nodreb-borrus` on Urbit or [𝕏](https://twitter.com/urbitceo).  Thank you for supporting [urbit.me](https://urbit.me).
