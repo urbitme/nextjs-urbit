@@ -38,6 +38,8 @@ Open [http://localhost:3000/apps/myappname](http://localhost:3000/apps/myappname
     ```
     You will need to visit `localhost:3000/apps/myappname` to view your app during development.
 
+    There is a local only redirect setup for this url by default.  If you do not like the warnings this generates, go ahead and remove it from `next.config.mjs`
+
 ## Production Build
 
 Build and export your project by running:
